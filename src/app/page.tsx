@@ -1,69 +1,323 @@
-import Image from "next/image";
+import Link from "next/link";
+import { HeroArt } from "@/components/HeroArt";
+import { Reveal } from "@/components/Reveal";
+import { ArrowIcon, Badge, ButtonLink, Eyebrow, Section } from "@/components/ui";
+import {
+  company,
+  services,
+  process,
+  differentiators,
+  stack,
+  industries,
+} from "@/lib/site";
+
+const stats = [
+  { value: `RC ${company.rcNumber}`, label: "CAC registered company" },
+  { value: `${services.length}`, label: "Service lines, one team" },
+  { value: "Lagos, NG", label: "Where we build from" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      {/* ---------------------------------------------------------------- Hero */}
+      <section className="relative isolate overflow-hidden bg-ink-900">
+        <div className="grain absolute inset-0 z-10" />
+        <div
+          aria-hidden="true"
+          className="absolute -right-40 -top-52 h-[46rem] w-[46rem] rounded-full bg-[radial-gradient(circle,rgba(228,112,58,0.22),transparent_62%)] blur-2xl"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+        <div
+          aria-hidden="true"
+          className="absolute -left-56 top-40 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,rgba(92,192,177,0.14),transparent_65%)] blur-2xl"
+        />
+
+        <div className="relative z-20 mx-auto w-full max-w-6xl px-5 pb-14 pt-16 sm:px-8 sm:pt-24 lg:pb-20 lg:pt-28">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
+            <div>
+              <Reveal>
+                <Badge>
+                  <span className="h-1.5 w-1.5 rounded-full bg-ember-500" />
+                  Software · Cloud · AI
+                </Badge>
+              </Reveal>
+
+              <Reveal delay={80}>
+                <h1 className="mt-7 font-display text-[clamp(2.9rem,7.4vw,5rem)] font-normal leading-[0.95] tracking-[-0.02em] text-cream-50">
+                  Technology that
+                  <br />
+                  <span className="text-cream-100/55">closes the loop.</span>
+                </h1>
+              </Reveal>
+
+              <Reveal delay={160}>
+                <p className="mt-7 max-w-xl text-pretty text-[1.02rem] leading-relaxed text-cream-100/65">
+                  {company.legalName} builds the software, websites, mobile
+                  apps, cloud infrastructure and AI systems that Nigerian
+                  businesses run on — designed, shipped and maintained by one
+                  accountable team.
+                </p>
+              </Reveal>
+
+              <Reveal delay={240}>
+                <div className="mt-9 flex flex-wrap items-center gap-3">
+                  <ButtonLink href="/contact">
+                    Start a project
+                    <ArrowIcon />
+                  </ButtonLink>
+                  <ButtonLink href="/services" variant="ghost">
+                    What we do
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-cream-100/15">
+                      <ArrowIcon className="h-3 w-3" />
+                    </span>
+                  </ButtonLink>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Illustration */}
+            <Reveal delay={200} className="relative">
+              <div className="relative mx-auto max-w-[30rem] lg:max-w-none">
+                <HeroArt className="h-auto w-full" />
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Stats + stack */}
+          <Reveal delay={320}>
+            <div className="mt-14 grid gap-10 border-t border-cream-200/10 pt-9 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+              <dl className="flex flex-wrap gap-x-12 gap-y-6">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <dt className="sr-only">{stat.label}</dt>
+                    <dd>
+                      <span className="block font-display text-[2.1rem] leading-none tracking-tight text-cream-50">
+                        {stat.value}
+                      </span>
+                      <span className="mt-2 block text-xs tracking-wide text-cream-100/45">
+                        {stat.label}
+                      </span>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="lg:text-right">
+                <p className="mb-3 text-[0.7rem] uppercase tracking-[0.2em] text-cream-100/35">
+                  We build with
+                </p>
+                <ul className="flex flex-wrap gap-x-5 gap-y-2 lg:justify-end">
+                  {stack.slice(0, 6).map((tech) => (
+                    <li key={tech} className="text-sm text-cream-100/60">
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------ Services */}
+      <Section className="border-t border-cream-200/10 bg-ink-950 py-20 sm:py-28">
+        <div className="grain absolute inset-0" />
+        <div className="relative">
+          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+            <Reveal>
+              <Eyebrow>What we do</Eyebrow>
+              <h2 className="max-w-2xl text-balance font-display text-[clamp(2rem,4.4vw,3.1rem)] leading-[1.05] tracking-[-0.015em] text-cream-50">
+                Ten service lines. One team you can call.
+              </h2>
+              <p className="mt-5 max-w-xl text-pretty leading-relaxed text-cream-100/60">
+                Most companies stitch together a developer, a designer, a
+                marketer and an IT vendor — then spend their week translating
+                between them. We do the whole stack, so the pieces are built to
+                fit from day one.
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <ButtonLink href="/services" variant="ghost">
+                All services
+                <ArrowIcon />
+              </ButtonLink>
+            </Reveal>
+          </div>
+
+          <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-cream-200/10 bg-cream-200/10 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, i) => (
+              <Reveal
+                as="li"
+                key={service.slug}
+                delay={(i % 3) * 90}
+                className="group relative bg-ink-950"
+              >
+                <Link
+                  href={`/services#${service.slug}`}
+                  className="flex h-full flex-col gap-3 p-7 transition-colors duration-300 hover:bg-ink-800/70"
+                >
+                  <span className="font-mono text-xs tracking-widest text-ember-500/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display text-[1.6rem] leading-tight tracking-tight text-cream-50">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-cream-100/55">
+                    {service.short}
+                  </p>
+                  <span className="mt-auto pt-5 text-sm text-ember-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    Read more &rarr;
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+
+            {/* Fills the trailing cells of the grid rather than leaving a hole */}
+            <Reveal
+              as="li"
+              delay={90}
+              className="flex flex-col justify-center gap-4 bg-ink-900/60 p-7 sm:col-span-2"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <h3 className="font-display text-[1.6rem] leading-tight tracking-tight text-cream-50">
+                Not sure which of these you need?
+              </h3>
+              <p className="max-w-md text-sm leading-relaxed text-cream-100/55">
+                Describe the problem in plain language and we will tell you what
+                it maps to — and what it should cost.
+              </p>
+              <div className="pt-2">
+                <ButtonLink href="/contact" variant="ember" className="!py-2.5">
+                  Tell us the problem
+                  <ArrowIcon />
+                </ButtonLink>
+              </div>
+            </Reveal>
+          </ul>
+        </div>
+      </Section>
+
+      {/* ------------------------------------------------------------ Approach */}
+      <Section className="bg-cream-100 py-20 text-ink-900 sm:py-28">
+        <Reveal>
+          <Eyebrow tone="light">How we work</Eyebrow>
+          <h2 className="max-w-2xl text-balance font-display text-[clamp(2rem,4.4vw,3.1rem)] leading-[1.05] tracking-[-0.015em] text-ink-900">
+            A loop, not a handover.
+          </h2>
+          <p className="mt-5 max-w-xl text-pretty leading-relaxed text-ink-800/70">
+            Software is not finished when it launches — that is when it starts
+            earning. Our process is built to keep improving the thing after it
+            is live.
           </p>
+        </Reveal>
+
+        <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-ink-900/10 bg-ink-900/10 md:grid-cols-2 lg:grid-cols-5">
+          {process.map((phase, i) => (
+            <Reveal
+              as="li"
+              key={phase.step}
+              delay={i * 80}
+              className="flex flex-col gap-3 bg-cream-100 p-7"
+            >
+              <span className="font-mono text-xs tracking-widest text-ember-600">
+                {phase.step}
+              </span>
+              <h3 className="font-display text-2xl leading-tight tracking-tight text-ink-900">
+                {phase.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-ink-800/65">
+                {phase.body}
+              </p>
+            </Reveal>
+          ))}
+        </ol>
+      </Section>
+
+      {/* --------------------------------------------------------------- Why us */}
+      <Section className="bg-ink-900 py-20 sm:py-28">
+        <div className="grain absolute inset-0" />
+        <div className="relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <Reveal>
+            <Eyebrow>Why CLOOP</Eyebrow>
+            <h2 className="text-balance font-display text-[clamp(2rem,4.4vw,3.1rem)] leading-[1.05] tracking-[-0.015em] text-cream-50">
+              A young company with old-fashioned accountability.
+            </h2>
+            <p className="mt-5 max-w-md text-pretty leading-relaxed text-cream-100/60">
+              We are new, and we are not going to pretend otherwise. What we
+              offer instead of a decade of logos is a registered company, a
+              named person answering the phone, and work you can inspect.
+            </p>
+            <div className="mt-8">
+              <ButtonLink href="/about" variant="ghost">
+                About the company
+                <ArrowIcon />
+              </ButtonLink>
+            </div>
+          </Reveal>
+
+          <ul className="grid gap-5 sm:grid-cols-2">
+            {differentiators.map((item, i) => (
+              <Reveal
+                as="li"
+                key={item.title}
+                delay={i * 90}
+                className="rounded-2xl border border-cream-200/10 bg-cream-100/[0.03] p-6 transition-colors duration-300 hover:border-ember-400/30"
+              >
+                <h3 className="font-display text-xl leading-snug tracking-tight text-cream-50">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-cream-100/55">
+                  {item.body}
+                </p>
+              </Reveal>
+            ))}
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </Section>
+
+      {/* ----------------------------------------------------------- Industries */}
+      <section className="relative overflow-hidden border-y border-cream-200/10 bg-ink-950 py-10">
+        <div className="marquee-mask flex">
+          <ul className="animate-marquee flex shrink-0 items-center gap-10 pr-10">
+            {[...industries, ...industries].map((industry, i) => (
+              <li
+                key={`${industry}-${i}`}
+                className="flex shrink-0 items-center gap-10 whitespace-nowrap text-sm tracking-wide text-cream-100/45"
+              >
+                {industry}
+                <span className="h-1 w-1 rounded-full bg-ember-500/60" />
+              </li>
+            ))}
+          </ul>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ CTA */}
+      <Section className="relative overflow-hidden bg-ink-900 py-24 sm:py-32">
+        <div className="grain absolute inset-0" />
+        <div
+          aria-hidden="true"
+          className="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(228,112,58,0.16),transparent_65%)] blur-2xl"
+        />
+        <Reveal className="relative text-center">
+          <h2 className="mx-auto max-w-3xl text-balance font-display text-[clamp(2.2rem,5.6vw,4rem)] leading-[1.02] tracking-[-0.02em] text-cream-50">
+            Tell us what is broken. We will tell you what it takes to fix it.
+          </h2>
+          <p className="mx-auto mt-6 max-w-lg text-pretty leading-relaxed text-cream-100/60">
+            A 30-minute call, no charge and no obligation. You leave with a
+            clear view of scope, timeline and cost — even if you build it with
+            someone else.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <ButtonLink href="/contact" variant="ember">
+              Book a free call
+              <ArrowIcon />
+            </ButtonLink>
+            <ButtonLink href={`mailto:${company.email}`} variant="ghost">
+              {company.email}
+            </ButtonLink>
+          </div>
+        </Reveal>
+      </Section>
+    </>
   );
 }

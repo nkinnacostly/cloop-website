@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand palette — deep ink navy, warm cream, ember accent */
+  --color-ink-950: #05161f;
+  --color-ink-900: #071e2e;
+  --color-ink-800: #0a2a3f;
+  --color-ink-700: #0f3750;
+  --color-ink-600: #164863;
+  --color-ink-500: #22607e;
+
+  --color-cream-50: #faf7f1;
+  --color-cream-100: #f4efe4;
+  --color-cream-200: #e7dfcf;
+  --color-cream-300: #d3c8b3;
+
+  --color-ember-300: #f4b389;
+  --color-ember-400: #ee9058;
+  --color-ember-500: #e4703a;
+  --color-ember-600: #c85a2a;
+
+  --color-sea-400: #5cc0b1;
+  --color-sea-500: #3aa397;
+
+  --font-display: var(--font-display), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --shadow-lift: 0 24px 60px -24px rgba(3, 15, 22, 0.65);
+  --shadow-card: 0 1px 0 0 rgba(244, 239, 228, 0.06) inset, 0 20px 40px -32px rgba(0, 0, 0, 0.9);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ink-900);
+  color: var(--color-cream-100);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-ember-500);
+  color: var(--color-ink-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* --- Utilities ------------------------------------------------------- */
+
+/* Fine film grain, layered over dark panels for the printed-poster feel */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+
+.hairline { border-color: color-mix(in oklab, var(--color-cream-200) 14%, transparent); }
+
+/* Scroll-reveal, driven by IntersectionObserver in <Reveal />. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Without JavaScript nothing would ever be revealed, so show it all.
+   The <noscript> block in the layout covers browsers that predate
+   the `scripting` media feature. */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drift-slow {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -14px, 0) rotate(1.5deg); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.85; }
+}
+.animate-drift { animation: drift-slow 9s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 38s linear infinite; }
+.animate-pulse-soft { animation: pulse-soft 3.4s ease-in-out infinite; }
+
+/* Edge-to-edge marquee for the technology strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 34s linear infinite;
+}
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }

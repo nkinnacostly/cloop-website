@@ -1,10 +1,18 @@
 import Link from "next/link";
 import { HeroArt } from "@/components/HeroArt";
 import { Reveal } from "@/components/Reveal";
-import { ArrowIcon, Badge, ButtonLink, Eyebrow, Section } from "@/components/ui";
+import {
+  ArrowIcon,
+  Badge,
+  ButtonLink,
+  Eyebrow,
+  ExternalIcon,
+  Section,
+} from "@/components/ui";
 import {
   company,
   services,
+  products,
   process,
   differentiators,
   stack,
@@ -12,9 +20,9 @@ import {
 } from "@/lib/site";
 
 const stats = [
-  { value: `RC ${company.rcNumber}`, label: "CAC registered company" },
+  { value: `${products.length}`, label: "Products shipped and running" },
   { value: `${services.length}`, label: "Service lines, one team" },
-  { value: "Lagos, NG", label: "Where we build from" },
+  { value: `RC ${company.rcNumber}`, label: "CAC registered company" },
 ];
 
 export default function Home() {
@@ -119,8 +127,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------ Services */}
+      {/* ------------------------------------------------------------ Products */}
       <Section className="border-t border-cream-200/10 bg-ink-950 py-20 sm:py-28">
+        <div className="grain absolute inset-0" />
+        <div className="relative">
+          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+            <Reveal>
+              <Eyebrow>Our products</Eyebrow>
+              <h2 className="max-w-2xl text-balance font-display text-[clamp(2rem,4.4vw,3.1rem)] leading-[1.05] tracking-[-0.015em] text-cream-50">
+                Software we built, launched and still run.
+              </h2>
+              <p className="mt-5 max-w-xl text-pretty leading-relaxed text-cream-100/60">
+                The quickest way to judge a technology partner is to look at
+                what they have shipped for themselves. These are ours — live
+                products with real users, not case studies.
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <ButtonLink href="/products" variant="ghost">
+                All products
+                <ArrowIcon />
+              </ButtonLink>
+            </Reveal>
+          </div>
+
+          <ul className="mt-14 grid gap-5 lg:grid-cols-3">
+            {products.map((product, i) => (
+              <Reveal
+                as="li"
+                key={product.slug}
+                delay={i * 90}
+                className="group relative overflow-hidden rounded-2xl border border-cream-200/12 bg-cream-100/[0.03] transition-colors duration-300 hover:border-ember-400/35"
+              >
+                <a
+                  href={product.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-full flex-col p-7"
+                >
+                  <span className="text-[0.7rem] uppercase tracking-[0.18em] text-ember-400/80">
+                    {product.category}
+                  </span>
+                  <h3 className="mt-4 font-display text-[1.9rem] leading-tight tracking-tight text-cream-50">
+                    {product.name}
+                  </h3>
+                  <p className="mt-2.5 text-[0.95rem] leading-snug text-cream-100/75">
+                    {product.tagline}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-cream-100/50">
+                    For {product.audience}.
+                  </p>
+                  <span className="mt-auto flex items-center gap-1.5 pt-7 text-sm text-cream-100/45 transition-colors group-hover:text-ember-400">
+                    {product.domain}
+                    <ExternalIcon className="h-3.5 w-3.5" />
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* ------------------------------------------------------------ Services */}
+      <Section className="border-t border-cream-200/10 bg-ink-900 py-20 sm:py-28">
         <div className="grain absolute inset-0" />
         <div className="relative">
           <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
@@ -150,7 +219,7 @@ export default function Home() {
                 as="li"
                 key={service.slug}
                 delay={(i % 3) * 90}
-                className="group relative bg-ink-950"
+                className="group relative bg-ink-900"
               >
                 <Link
                   href={`/services#${service.slug}`}
@@ -176,7 +245,7 @@ export default function Home() {
             <Reveal
               as="li"
               delay={90}
-              className="flex flex-col justify-center gap-4 bg-ink-900/60 p-7 sm:col-span-2"
+              className="flex flex-col justify-center gap-4 bg-ink-950/60 p-7 sm:col-span-2"
             >
               <h3 className="font-display text-[1.6rem] leading-tight tracking-tight text-cream-50">
                 Not sure which of these you need?
@@ -243,8 +312,9 @@ export default function Home() {
             </h2>
             <p className="mt-5 max-w-md text-pretty leading-relaxed text-cream-100/60">
               We are new, and we are not going to pretend otherwise. What we
-              offer instead of a decade of logos is a registered company, a
-              named person answering the phone, and work you can inspect.
+              offer instead of a decade of logos is three products you can open
+              in a browser right now, a registered company, and a named person
+              answering the phone.
             </p>
             <div className="mt-8">
               <ButtonLink href="/about" variant="ghost">
@@ -260,7 +330,7 @@ export default function Home() {
                 as="li"
                 key={item.title}
                 delay={i * 90}
-                className="rounded-2xl border border-cream-200/10 bg-cream-100/[0.03] p-6 transition-colors duration-300 hover:border-ember-400/30"
+                className="rounded-2xl border border-cream-200/10 bg-cream-100/[0.03] p-6 transition-colors duration-300 last:sm:col-span-2 hover:border-ember-400/30"
               >
                 <h3 className="font-display text-xl leading-snug tracking-tight text-cream-50">
                   {item.title}

@@ -102,6 +102,25 @@ export function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+export function ExternalIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
+      <path
+        d="M5.5 10.5 10.5 5.5m0 0H6.25m4.25 0v4.25"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function Section({
   children,
   className = "",

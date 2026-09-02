@@ -80,6 +80,14 @@ export default function AboutPage() {
                   quietly rotting.
                 </p>
                 <p>
+                  We put that to the test on our own products. Paidly, Get Any
+                  Number and MyEstateAccess were designed, built, launched and
+                  are operated by this team — so the support load, the uptime
+                  and the cost of every shortcut land on us. It is a useful
+                  discipline, and it is why we are careful about what we
+                  recommend to clients.
+                </p>
+                <p>
                   We are early in our story and we are candid about that. What
                   we bring is engineering discipline, clear pricing, and the
                   kind of attention a new company can give that a large one
@@ -209,7 +217,7 @@ export default function AboutPage() {
             ))}
           </ul>
 
-          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {differentiators.map((item, i) => (
               <Reveal
                 key={item.title}

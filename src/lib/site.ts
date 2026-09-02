@@ -28,10 +28,89 @@ export const company = {
 } as const;
 
 export const nav = [
+  { href: "/products", label: "Products" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
+
+/**
+ * Products CLOOP has shipped and runs itself.
+ *
+ * NOTE FOR MAINTAINERS: the Paidly entry below was reconstructed from the
+ * product's own public marketing copy. The "Get Any Number" and
+ * "MyEstateAccess" entries are UNVERIFIED DRAFTS — replace every field marked
+ * with a TODO before this page goes live.
+ */
+export type Product = {
+  slug: string;
+  name: string;
+  url: string;
+  domain: string;
+  category: string;
+  tagline: string;
+  blurb: string;
+  features: string[];
+  audience: string;
+};
+
+export const products: Product[] = [
+  {
+    slug: "paidly",
+    name: "Paidly",
+    url: "https://getpaidly.co",
+    domain: "getpaidly.co",
+    category: "Payments & commerce",
+    tagline: "Stop the DM chaos. Get paid to confirm.",
+    blurb:
+      "Social sellers lose orders in the back-and-forth: price, availability, account number, proof of payment, repeat. Paidly gives every product its own payment link. Paste it in an Instagram caption, a TikTok bio or a WhatsApp status, and the customer opens a branded checkout on their phone — no app, no account — pays a deposit or the full amount, and the money lands with the seller along with an email carrying the order and the customer's details.",
+    features: [
+      "A payment link for every product",
+      "Branded mobile checkout — no app, no signup",
+      "Take a deposit or the full amount upfront",
+      "Instant order alerts with customer contact details",
+      "Product photos, prices and variations",
+      "2.5% per sale, nothing monthly",
+    ],
+    audience: "Instagram, TikTok and WhatsApp sellers",
+  },
+  {
+    slug: "get-any-number",
+    name: "Get Any Number",
+    url: "https://getanynumberonline.com",
+    domain: "getanynumberonline.com",
+    category: "Telecoms",
+    // TODO: replace tagline, blurb, features and audience with the real copy.
+    tagline: "Virtual numbers, online and instant.",
+    blurb:
+      "TODO — one paragraph on what Get Any Number actually does: which numbers it provides, which countries, whether it is for SMS verification, calls, or business lines, and what makes it different from the alternatives.",
+    features: [
+      "TODO — feature one",
+      "TODO — feature two",
+      "TODO — feature three",
+      "TODO — feature four",
+    ],
+    audience: "TODO — who buys this",
+  },
+  {
+    slug: "myestateaccess",
+    name: "MyEstateAccess",
+    url: "https://myestateaccess.com",
+    domain: "myestateaccess.com",
+    category: "Proptech & security",
+    // TODO: replace tagline, blurb, features and audience with the real copy.
+    tagline: "Access management for gated estates.",
+    blurb:
+      "TODO — one paragraph on what MyEstateAccess actually does: visitor access codes, resident directories, security-post workflow, dues and levies, or whatever the real scope is, and who it is sold to (estate managers, residents' associations, developers).",
+    features: [
+      "TODO — feature one",
+      "TODO — feature two",
+      "TODO — feature three",
+      "TODO — feature four",
+    ],
+    audience: "TODO — who buys this",
+  },
+];
 
 /** The nine objects registered in the Memorandum of Association. */
 export type Service = {
@@ -207,6 +286,10 @@ export const differentiators = [
   {
     title: "One accountable team",
     body: "Software, design, cloud and marketing under a single roof. No finger-pointing between three vendors when something breaks.",
+  },
+  {
+    title: "We ship our own products",
+    body: "Paidly, Get Any Number and MyEstateAccess are ours — built, launched and run by this team. We carry the pager for our own software, which is a different discipline from billing for someone else's.",
   },
   {
     title: "Registered and accountable",

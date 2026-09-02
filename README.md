@@ -30,6 +30,7 @@ npm run lint    # eslint
 | `src/lib/site.ts` | **Single source of truth** — company facts, services, process, nav. Edit copy here first. |
 | `src/app/layout.tsx` | Fonts, metadata, JSON-LD organisation schema, nav + footer shell |
 | `src/app/page.tsx` | Home |
+| `src/app/products/page.tsx` | Products — Paidly, Get Any Number, MyEstateAccess |
 | `src/app/services/page.tsx` | Services |
 | `src/app/about/page.tsx` | About, including the public CAC registration table |
 | `src/app/contact/page.tsx` | Contact page and FAQ |
@@ -41,6 +42,14 @@ npm run lint    # eslint
 Almost all copy lives in [`src/lib/site.ts`](src/lib/site.ts). Adding a service
 there automatically adds it to the home grid, the services page, the footer and
 the contact form's dropdown.
+
+### Product copy still to confirm
+
+The `products` array in `src/lib/site.ts` carries three entries. **Paidly** was
+written from the product's own public marketing copy. **Get Any Number** and
+**MyEstateAccess** are unverified drafts: their `blurb`, `features` and
+`audience` fields contain `TODO` markers that render visibly on the page.
+Replace them before launch.
 
 ### What is deliberately not published
 

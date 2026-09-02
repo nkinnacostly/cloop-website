@@ -37,10 +37,9 @@ export const nav = [
 /**
  * Products CLOOP has shipped and runs itself.
  *
- * NOTE FOR MAINTAINERS: the Paidly entry below was reconstructed from the
- * product's own public marketing copy. The "Get Any Number" and
- * "MyEstateAccess" entries are UNVERIFIED DRAFTS — replace every field marked
- * with a TODO before this page goes live.
+ * NOTE FOR MAINTAINERS: the "MyEstateAccess" entry below is still an
+ * UNVERIFIED DRAFT — replace every field marked with a TODO before this page
+ * goes live. Paidly and Get Any Number are confirmed.
  */
 export type Product = {
   slug: string;
@@ -79,18 +78,20 @@ export const products: Product[] = [
     name: "Get Any Number",
     url: "https://getanynumberonline.com",
     domain: "getanynumberonline.com",
-    category: "Telecoms",
-    // TODO: replace tagline, blurb, features and audience with the real copy.
-    tagline: "Virtual numbers, online and instant.",
+    category: "Telecoms & connectivity",
+    tagline: "Numbers and data, without the SIM.",
     blurb:
-      "TODO — one paragraph on what Get Any Number actually does: which numbers it provides, which countries, whether it is for SMS verification, calls, or business lines, and what makes it different from the alternatives.",
+      "Two everyday problems, solved in one place. A sign-up demands an SMS code you cannot receive — a service that does not cover your country, a second account, a number you would rather not hand out — so you buy a virtual number and take the code online. Or you just want to be online: an eSIM data plan gets you connected without hunting down a shop, a physical SIM or a contract you did not ask for.",
+    // TODO: add the countries covered and the pricing model once confirmed.
     features: [
-      "TODO — feature one",
-      "TODO — feature two",
-      "TODO — feature three",
-      "TODO — feature four",
+      "Virtual numbers for SMS verification",
+      "Receive codes online — no SIM, no second phone",
+      "eSIM data-only plans",
+      "Get connected without a physical SIM or a store visit",
+      "Buy what you need, when you need it",
     ],
-    audience: "TODO — who buys this",
+    audience:
+      "people verifying accounts online, and travellers who want data without a SIM",
   },
   {
     slug: "myestateaccess",

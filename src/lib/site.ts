@@ -37,9 +37,9 @@ export const nav = [
 /**
  * Products CLOOP has shipped and runs itself.
  *
- * NOTE FOR MAINTAINERS: scope and positioning for all three are confirmed.
- * The remaining TODOs are detail — countries covered, pricing models — that
- * would strengthen the entries but are not blocking.
+ * All three entries were written from each product's own live site on
+ * 2 September 2026. Taglines are the products' own. Re-check the counts
+ * (services, countries) and the payment partners when they change.
  */
 export type Product = {
   slug: string;
@@ -59,19 +59,19 @@ export const products: Product[] = [
     name: "Paidly",
     url: "https://getpaidly.co",
     domain: "getpaidly.co",
-    category: "Payments & commerce",
-    tagline: "Stop the DM chaos. Get paid to confirm.",
+    category: "Invoicing & payments",
+    tagline: "The admin side of freelancing, handled.",
     blurb:
-      "Social sellers lose orders in the back-and-forth: price, availability, account number, proof of payment, repeat. Paidly gives every product its own payment link. Paste it in an Instagram caption, a TikTok bio or a WhatsApp status, and the customer opens a branded checkout on their phone — no app, no account — pays a deposit or the full amount, and the money lands with the seller along with an email carrying the order and the customer's details.",
+      "Freelancers lose hours and money to their own back office — chasing an invoice, getting an agreement signed, remembering what actually came in, then reconstructing the year at tax time. Paidly puts invoicing, contracts and earnings in one place. Send a professional invoice with a Pay Now button in about a minute, get a service agreement e-signed in minutes, and have every payment tracked the moment it lands — then export the whole year as PDF or CSV.",
     features: [
-      "A payment link for every product",
-      "Branded mobile checkout — no app, no signup",
-      "Take a deposit or the full amount upfront",
-      "Instant order alerts with customer contact details",
-      "Product photos, prices and variations",
-      "2.5% per sale, nothing monthly",
+      "Professional invoices with a Pay Now button",
+      "Service agreements signed with built-in e-signatures",
+      "Payments tracked automatically as they land",
+      "Earnings dashboard, income sources and reports",
+      "Annual income export as PDF or CSV",
+      "Flutterwave and Paystack across Nigeria, Ghana, Kenya and South Africa",
     ],
-    audience: "Instagram, TikTok and WhatsApp sellers",
+    audience: "freelance designers, developers and writers across Africa",
   },
   {
     slug: "get-any-number",
@@ -79,19 +79,19 @@ export const products: Product[] = [
     url: "https://getanynumberonline.com",
     domain: "getanynumberonline.com",
     category: "Telecoms & connectivity",
-    tagline: "Numbers and data, without the SIM.",
+    tagline: "Verify anything. Instantly.",
     blurb:
-      "Two everyday problems, solved in one place. A sign-up demands an SMS code you cannot receive — a service that does not cover your country, a second account, a number you would rather not hand out — so you buy a virtual number and take the code online. Or you just want to be online: an eSIM data plan gets you connected without hunting down a shop, a physical SIM or a contract you did not ask for.",
-    // TODO: add the countries covered and the pricing model once confirmed.
+      "Telegram, Tinder and Google all reject VoIP numbers, because cheap unlimited numbers are how fake accounts get made. Get Any Number sidesteps that by using the real thing: every number comes from a physical SIM on a mobile carrier, so lookup databases read it as an ordinary mobile line and it clears the same checks. Pick a service and a country, get a number in seconds, read the code in the dashboard — and pay only if a code actually arrives. Long-term rentals cover accounts you sign into repeatedly, and data-only eSIMs cover the trip.",
     features: [
-      "Virtual numbers for SMS verification",
-      "Receive codes online — no SIM, no second phone",
-      "eSIM data-only plans",
-      "Get connected without a physical SIM or a store visit",
-      "Buy what you need, when you need it",
+      "Real SIM numbers, not VoIP ranges",
+      "1,300+ services across 150+ countries",
+      "Pay only when a code arrives",
+      "Automatic refund if the 20-minute session expires empty",
+      "Long-term rentals for repeat logins",
+      "Data-only eSIMs in 190+ countries",
     ],
     audience:
-      "people verifying accounts online, and travellers who want data without a SIM",
+      "developers and anyone signing up to platforms that reject VoIP numbers",
   },
   {
     slug: "myestateaccess",
@@ -99,19 +99,18 @@ export const products: Product[] = [
     url: "https://myestateaccess.com",
     domain: "myestateaccess.com",
     category: "Proptech & security",
-    tagline: "Every visitor expected. Every entry logged.",
+    tagline: "The gate book, replaced by a code that expires.",
     blurb:
-      "Most gated estates still run the gate on a logbook, a phone call and an argument. MyEstateAccess replaces that with a code: a resident issues one for a guest, a delivery or an artisan, the visitor presents it on arrival, and security lets them through. Every entry is recorded against the resident who invited it, so estate management has a record of who came in and when — instead of a notebook nobody reads.",
-    // TODO: confirm the pricing model and whether residents get a mobile app.
+      "A paper book at the boom is a queue, an illegible name and a phone number nobody will ever call. MyEstateAccess replaces it with a single-use code: the resident taps once and forwards the code however they already talk to their visitor, the guard types it in and gets a clear admit-or-refuse with the house name, and the code is spent the moment it is accepted. It also keeps working when the network does not — the guard's phone holds a local copy of the estate's live codes, so a signal outage never becomes a gate outage.",
     features: [
-      "Visitor access codes issued by residents",
-      "Controlled entry for guests, deliveries and artisans",
-      "Every entry logged and attributable",
-      "Access records for estate management and security",
-      "Estate access managed from one place",
+      "Single-use visitor codes that expire after six hours",
+      "Verification works offline at the gate, then syncs",
+      "Nothing for the visitor to install — no app, no account",
+      "Searchable trail of every entry and every refusal",
+      "Separate views for residents, guards, managers and operators",
+      "Live codes visible only to the resident who created them",
     ],
-    audience:
-      "gated estates, residents' associations and the security teams that run the gate",
+    audience: "gated and security estates in South Africa",
   },
 ];
 

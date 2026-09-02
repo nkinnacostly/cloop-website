@@ -46,10 +46,9 @@ the contact form's dropdown.
 ### Product copy
 
 The `products` array in `src/lib/site.ts` drives both the home page section and
-`/products`. Scope and positioning for all three are confirmed. Two `TODO`
-comments remain for detail worth adding — the countries Get Any Number covers,
-and the pricing model for it and MyEstateAccess. Neither blocks launch; neither
-renders on the page.
+`/products`. All three entries were written from each product's own live site,
+and each tagline is the product's own. Re-check the countable claims — services
+and countries covered, payment partners — whenever the products change.
 
 ### What is deliberately not published
 

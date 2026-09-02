@@ -35,7 +35,8 @@ export default function ProductsPage() {
               design, launch and operate our own products — which means we carry
               the support load, the uptime and the cost of every decision we
               make. It is the fastest way to stay honest about what software
-              really takes.
+              really takes. Between them they serve freelancers, developers and
+              gated estates across Nigeria, Ghana, Kenya and South Africa.
             </p>
           </Reveal>
         </div>

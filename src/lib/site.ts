@@ -10,33 +10,22 @@ export const company = {
   shortName: "CLOOP",
   tagline: "Technology that closes the loop.",
   rcNumber: "9771867",
-  tin: "2622401595060",
   incorporated: "13 August 2026",
   companyType: "Private Company Limited by Shares",
   status: "Active",
-  shareCapital: "₦1,000,000",
-  address: {
-    line1: "2, Isah Omale Street",
-    line2: "Glorious Estate, Badore, Ajah",
-    city: "Lagos State",
-    country: "Nigeria",
-  },
+  /* Deliberately not published: TIN, share capital, the registered
+     street address (which is a residential address on the CAC filing)
+     and the direct phone line. Certified extracts carrying those
+     particulars go out on request instead. */
+  location: "Lagos, Nigeria",
+  locality: "Lagos",
   email: "hello@cloopuniverse.com",
-  phone: "+234 812 220 4698",
-  phoneHref: "+2348122204698",
   whatsapp: "https://wa.me/2348122204698",
   founder: {
     name: "Ayang Costly Okon",
     role: "Founder & Managing Director",
   },
 } as const;
-
-export const addressOneLine = [
-  company.address.line1,
-  company.address.line2,
-  company.address.city,
-  company.address.country,
-].join(", ");
 
 export const nav = [
   { href: "/services", label: "Services" },

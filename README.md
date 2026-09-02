@@ -31,7 +31,7 @@ npm run lint    # eslint
 | `src/app/layout.tsx` | Fonts, metadata, JSON-LD organisation schema, nav + footer shell |
 | `src/app/page.tsx` | Home |
 | `src/app/services/page.tsx` | Services |
-| `src/app/about/page.tsx` | About, including the CAC registration table |
+| `src/app/about/page.tsx` | About, including the public CAC registration table |
 | `src/app/contact/page.tsx` | Contact page and FAQ |
 | `src/app/globals.css` | Design tokens (colours, fonts, shadows) and custom utilities |
 | `src/components/` | Nav, Footer, Logo, HeroArt, Reveal, ContactForm, UI primitives |
@@ -41,6 +41,15 @@ npm run lint    # eslint
 Almost all copy lives in [`src/lib/site.ts`](src/lib/site.ts). Adding a service
 there automatically adds it to the home grid, the services page, the footer and
 the contact form's dropdown.
+
+### What is deliberately not published
+
+`src/lib/site.ts` omits the company's TIN, share capital, registered street
+address and direct phone line. The street address on the CAC filing is a
+residential address, and the TIN belongs on invoices rather than a public page.
+Procurement teams get the full particulars from the certified CAC extract,
+which the About page tells them to ask for. The RC number stays public — it is
+public by design and is what anyone verifying the company actually checks.
 
 ### Design tokens
 

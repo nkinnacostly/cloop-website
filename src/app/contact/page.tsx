@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
 import { Eyebrow, Section } from "@/components/ui";
-import { company, addressOneLine } from "@/lib/site";
+import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -18,16 +18,10 @@ const channels = [
     note: "Best for briefs and documents",
   },
   {
-    label: "Phone",
-    value: company.phone,
-    href: `tel:${company.phoneHref}`,
-    note: "Mon–Fri, 9am–6pm WAT",
-  },
-  {
     label: "WhatsApp",
     value: "Message us",
     href: company.whatsapp,
-    note: "Quick questions and voice notes",
+    note: "Quick questions and voice notes, Mon–Fri 9am–6pm WAT",
   },
 ];
 
@@ -111,14 +105,15 @@ export default function ContactPage() {
               <Reveal delay={200}>
                 <div className="mt-8 rounded-2xl border border-cream-200/10 p-6">
                   <h2 className="text-[0.7rem] uppercase tracking-[0.18em] text-cream-100/40">
-                    Registered office
+                    Where we are
                   </h2>
-                  <address className="mt-2.5 text-[0.95rem] not-italic leading-relaxed text-cream-100/70">
-                    {addressOneLine}
-                  </address>
+                  <p className="mt-2.5 text-[0.95rem] leading-relaxed text-cream-100/70">
+                    {company.location}. We work remotely with clients across
+                    Nigeria and internationally, and meet on site when a project
+                    calls for it.
+                  </p>
                   <p className="mt-4 text-xs text-cream-100/40">
-                    {company.legalName} &middot; RC {company.rcNumber} &middot;
-                    TIN {company.tin}
+                    {company.legalName} &middot; RC {company.rcNumber}
                   </p>
                 </div>
               </Reveal>

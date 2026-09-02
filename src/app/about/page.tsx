@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Reveal } from "@/components/Reveal";
 import { LogoMark } from "@/components/Logo";
 import { ArrowIcon, Badge, ButtonLink, Eyebrow, Section } from "@/components/ui";
-import { company, addressOneLine, differentiators, services } from "@/lib/site";
+import { company, differentiators, services } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,10 +13,8 @@ export const metadata: Metadata = {
 const registry = [
   { label: "Registered name", value: company.legalName },
   { label: "RC number", value: company.rcNumber },
-  { label: "Tax identification number", value: company.tin },
   { label: "Company type", value: company.companyType },
   { label: "Date of incorporation", value: company.incorporated },
-  { label: "Share capital", value: company.shareCapital },
   { label: "Registrar", value: "Corporate Affairs Commission, Nigeria" },
   { label: "Status", value: company.status },
 ];
@@ -121,9 +119,10 @@ export default function AboutPage() {
               Everything you need to run due diligence.
             </h2>
             <p className="mt-5 max-w-sm text-pretty leading-relaxed text-cream-100/60">
-              Our registration particulars, exactly as filed with the Corporate
-              Affairs Commission. Certified extracts are available on request
-              for procurement and vendor onboarding.
+              Our registration particulars as filed with the Corporate Affairs
+              Commission. For procurement and vendor onboarding we provide the
+              certified CAC extract, which carries the full particulars —
+              including tax identification and registered office.
             </p>
             <Badge className="mt-7">
               <span className="h-1.5 w-1.5 rounded-full bg-sea-400" />
@@ -145,10 +144,14 @@ export default function AboutPage() {
               ))}
               <div className="bg-ink-950 p-6 sm:col-span-2">
                 <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-cream-100/40">
-                  Registered address
+                  Registered office
                 </dt>
                 <dd className="mt-2 text-[0.95rem] leading-snug text-cream-50">
-                  {addressOneLine}
+                  {company.location}
+                  <span className="mt-1.5 block text-sm text-cream-100/45">
+                    Full registered particulars are on the certified extract we
+                    provide for vendor onboarding.
+                  </span>
                 </dd>
               </div>
             </dl>

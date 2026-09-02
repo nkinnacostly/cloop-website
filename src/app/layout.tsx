@@ -3,7 +3,7 @@ import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { company, addressOneLine, siteUrl } from "@/lib/site";
+import { company, siteUrl } from "@/lib/site";
 
 const display = Instrument_Serif({
   variable: "--font-display",
@@ -65,18 +65,17 @@ const organisationSchema = {
   alternateName: company.name,
   url: siteUrl,
   email: company.email,
-  telephone: company.phone,
   foundingDate: "2026-08-13",
   identifier: `RC ${company.rcNumber}`,
-  taxID: company.tin,
   founder: { "@type": "Person", name: company.founder.name },
   address: {
     "@type": "PostalAddress",
-    streetAddress: `${company.address.line1}, ${company.address.line2}`,
-    addressRegion: company.address.city,
+    addressLocality: company.locality,
+    addressRegion: "Lagos State",
     addressCountry: "NG",
   },
-  description: addressOneLine,
+  description:
+    "Software, web and mobile development, cloud, automation and AI for businesses in Nigeria and beyond.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { company, services, addressOneLine } from "@/lib/site";
+import { company, services } from "@/lib/site";
 
 const columns = [
   {
@@ -43,10 +43,12 @@ export function Footer() {
                 {company.email}
               </a>
               <a
-                href={`tel:${company.phoneHref}`}
+                href={company.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full border border-cream-200/15 px-4 py-2 text-xs text-cream-100/75 transition-colors hover:border-ember-400/50 hover:text-cream-50"
               >
-                {company.phone}
+                WhatsApp
               </a>
             </div>
           </div>
@@ -72,27 +74,18 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 border-t border-cream-200/10 pt-8">
-          <address className="text-sm not-italic leading-relaxed text-cream-100/55">
-            {addressOneLine}
-          </address>
-          <div className="mt-5 flex flex-col gap-3 text-xs text-cream-100/40 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              &copy; {new Date().getFullYear()} {company.legalName}. All rights
-              reserved.
-            </p>
-            <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
-              <span>RC {company.rcNumber}</span>
-              <span className="hidden sm:inline" aria-hidden="true">
-                &middot;
-              </span>
-              <span>TIN {company.tin}</span>
-              <span className="hidden sm:inline" aria-hidden="true">
-                &middot;
-              </span>
-              <span>Registered in Nigeria</span>
-            </p>
-          </div>
+        <div className="mt-14 flex flex-col gap-3 border-t border-cream-200/10 pt-8 text-xs text-cream-100/40 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            &copy; {new Date().getFullYear()} {company.legalName}. All rights
+            reserved.
+          </p>
+          <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <span>RC {company.rcNumber}</span>
+            <span className="hidden sm:inline" aria-hidden="true">
+              &middot;
+            </span>
+            <span>{company.location}</span>
+          </p>
         </div>
       </div>
     </footer>

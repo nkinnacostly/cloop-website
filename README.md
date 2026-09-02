@@ -43,13 +43,13 @@ Almost all copy lives in [`src/lib/site.ts`](src/lib/site.ts). Adding a service
 there automatically adds it to the home grid, the services page, the footer and
 the contact form's dropdown.
 
-### Product copy still to confirm
+### Product copy
 
-The `products` array in `src/lib/site.ts` carries three entries. **Paidly** was
-written from the product's own public marketing copy. **Get Any Number** and
-**MyEstateAccess** are unverified drafts: their `blurb`, `features` and
-`audience` fields contain `TODO` markers that render visibly on the page.
-Replace them before launch.
+The `products` array in `src/lib/site.ts` drives both the home page section and
+`/products`. Scope and positioning for all three are confirmed. Two `TODO`
+comments remain for detail worth adding — the countries Get Any Number covers,
+and the pricing model for it and MyEstateAccess. Neither blocks launch; neither
+renders on the page.
 
 ### What is deliberately not published
 

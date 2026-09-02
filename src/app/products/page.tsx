@@ -76,7 +76,9 @@ export default function ProductsPage() {
                       <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-cream-100/40">
                         Built for
                       </dt>
-                      <dd className="mt-1.5 text-sm text-cream-100/75">
+                      {/* audience reads as a sentence fragment on the home
+                          cards ("For …"), so lift the case only here */}
+                      <dd className="mt-1.5 text-sm text-cream-100/75 first-letter:uppercase">
                         {product.audience}
                       </dd>
                     </div>

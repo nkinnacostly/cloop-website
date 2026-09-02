@@ -37,9 +37,9 @@ export const nav = [
 /**
  * Products CLOOP has shipped and runs itself.
  *
- * NOTE FOR MAINTAINERS: the "MyEstateAccess" entry below is still an
- * UNVERIFIED DRAFT — replace every field marked with a TODO before this page
- * goes live. Paidly and Get Any Number are confirmed.
+ * NOTE FOR MAINTAINERS: scope and positioning for all three are confirmed.
+ * The remaining TODOs are detail — countries covered, pricing models — that
+ * would strengthen the entries but are not blocking.
  */
 export type Product = {
   slug: string;
@@ -99,17 +99,19 @@ export const products: Product[] = [
     url: "https://myestateaccess.com",
     domain: "myestateaccess.com",
     category: "Proptech & security",
-    // TODO: replace tagline, blurb, features and audience with the real copy.
-    tagline: "Access management for gated estates.",
+    tagline: "Every visitor expected. Every entry logged.",
     blurb:
-      "TODO — one paragraph on what MyEstateAccess actually does: visitor access codes, resident directories, security-post workflow, dues and levies, or whatever the real scope is, and who it is sold to (estate managers, residents' associations, developers).",
+      "Most gated estates still run the gate on a logbook, a phone call and an argument. MyEstateAccess replaces that with a code: a resident issues one for a guest, a delivery or an artisan, the visitor presents it on arrival, and security lets them through. Every entry is recorded against the resident who invited it, so estate management has a record of who came in and when — instead of a notebook nobody reads.",
+    // TODO: confirm the pricing model and whether residents get a mobile app.
     features: [
-      "TODO — feature one",
-      "TODO — feature two",
-      "TODO — feature three",
-      "TODO — feature four",
+      "Visitor access codes issued by residents",
+      "Controlled entry for guests, deliveries and artisans",
+      "Every entry logged and attributable",
+      "Access records for estate management and security",
+      "Estate access managed from one place",
     ],
-    audience: "TODO — who buys this",
+    audience:
+      "gated estates, residents' associations and the security teams that run the gate",
   },
 ];
 

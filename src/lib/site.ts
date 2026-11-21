@@ -99,9 +99,9 @@ export const products: Product[] = [
     url: "https://myestateaccess.com",
     domain: "myestateaccess.com",
     category: "Proptech & security",
-    tagline: "The gate book, replaced by a code that expires.",
+    tagline: "Visitors get in with a code, not a phone call.",
     blurb:
-      "A paper book at the boom is a queue, an illegible name and a phone number nobody will ever call. MyEstateAccess replaces it with a single-use code: the resident taps once and forwards the code however they already talk to their visitor, the guard types it in and gets a clear admit-or-refuse with the house name, and the code is spent the moment it is accepted. It also keeps working when the network does not — the guard's phone holds a local copy of the estate's live codes, so a signal outage never becomes a gate outage.",
+      "At most estate gates, the visitor waits outside while the guard rings the house and hopes someone picks up. MyEstateAccess replaces that call with a single-use code the resident sends ahead: they tap once and forward it however they already talk to their visitor, the guard types it in and gets a clear admit-or-refuse with the house name, and the code is spent the moment it is accepted. It also keeps working when the network does not — the guard's phone holds a local copy of the estate's live codes, so a signal outage never becomes a gate outage.",
     features: [
       "Single-use visitor codes that expire after six hours",
       "Verification works offline at the gate, then syncs",
@@ -110,7 +110,7 @@ export const products: Product[] = [
       "Separate views for residents, guards, managers and operators",
       "Live codes visible only to the resident who created them",
     ],
-    audience: "gated and security estates in South Africa",
+    audience: "gated estates across Nigeria",
   },
 ];
 

@@ -33,11 +33,11 @@ export default function Home() {
         <div className="grain absolute inset-0 z-10" />
         <div
           aria-hidden="true"
-          className="absolute -right-40 -top-52 h-[46rem] w-[46rem] rounded-full bg-[radial-gradient(circle,rgba(228,112,58,0.22),transparent_62%)] blur-2xl"
+          className="absolute -right-40 -top-52 h-184 w-184 rounded-full bg-[radial-gradient(circle,rgba(228,112,58,0.22),transparent_62%)] blur-2xl"
         />
         <div
           aria-hidden="true"
-          className="absolute -left-56 top-40 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,rgba(92,192,177,0.14),transparent_65%)] blur-2xl"
+          className="absolute -left-56 top-40 h-144 w-xl rounded-full bg-[radial-gradient(circle,rgba(92,192,177,0.14),transparent_65%)] blur-2xl"
         />
 
         <div className="relative z-20 mx-auto w-full max-w-6xl px-5 pb-14 pt-16 sm:px-8 sm:pt-24 lg:pb-20 lg:pt-28">
@@ -85,7 +85,7 @@ export default function Home() {
 
             {/* Illustration */}
             <Reveal delay={200} className="relative">
-              <div className="relative mx-auto max-w-[30rem] lg:max-w-none">
+              <div className="relative mx-auto max-w-120 lg:max-w-none">
                 <HeroArt className="h-auto w-full" />
               </div>
             </Reveal>
@@ -157,7 +157,7 @@ export default function Home() {
                 as="li"
                 key={product.slug}
                 delay={i * 90}
-                className="group relative overflow-hidden rounded-2xl border border-cream-200/12 bg-cream-100/[0.03] transition-colors duration-300 hover:border-ember-400/35"
+                className="group relative overflow-hidden rounded-2xl border border-cream-200/12 bg-cream-100/3 transition-colors duration-300 hover:border-ember-400/35"
               >
                 <a
                   href={product.url}
@@ -255,7 +255,7 @@ export default function Home() {
                 it maps to — and what it should cost.
               </p>
               <div className="pt-2">
-                <ButtonLink href="/contact" variant="ember" className="!py-2.5">
+                <ButtonLink href="/contact" variant="ember" className="py-2.5!">
                   Tell us the problem
                   <ArrowIcon />
                 </ButtonLink>
@@ -330,7 +330,7 @@ export default function Home() {
                 as="li"
                 key={item.title}
                 delay={i * 90}
-                className="rounded-2xl border border-cream-200/10 bg-cream-100/[0.03] p-6 transition-colors duration-300 last:sm:col-span-2 hover:border-ember-400/30"
+                className="rounded-2xl border border-cream-200/10 bg-cream-100/3 p-6 transition-colors duration-300 last:sm:col-span-2 hover:border-ember-400/30"
               >
                 <h3 className="font-display text-xl leading-snug tracking-tight text-cream-50">
                   {item.title}
@@ -366,7 +366,7 @@ export default function Home() {
         <div className="grain absolute inset-0" />
         <div
           aria-hidden="true"
-          className="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(228,112,58,0.16),transparent_65%)] blur-2xl"
+          className="absolute left-1/2 top-1/2 h-136 w-136 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(228,112,58,0.16),transparent_65%)] blur-2xl"
         />
         <Reveal className="relative text-center">
           <h2 className="mx-auto max-w-3xl text-balance font-display text-[clamp(2.2rem,5.6vw,4rem)] leading-[1.02] tracking-[-0.02em] text-cream-50">

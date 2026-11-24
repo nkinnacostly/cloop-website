@@ -12,7 +12,7 @@ import { company, products } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Paidly, Get Any Number, MyEstateAccess and MamaLine — the products CLOOP UNIVERSE TECH LTD has built and runs.",
+    "MamaLine, Paidly, Get Any Number and MyEstateAccess — the products CLOOP UNIVERSE TECH LTD has built and runs.",
 };
 
 export default function ProductsPage() {

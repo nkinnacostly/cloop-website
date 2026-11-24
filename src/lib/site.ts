@@ -59,6 +59,27 @@ export type Product = {
 
 export const products: Product[] = [
   {
+    slug: "mamaline",
+    name: "MamaLine",
+    url: "https://mamaline-web.vercel.app",
+    domain: "mamaline-web.vercel.app",
+    category: "Maternal health",
+    tagline: "Pregnancy and baby care on any phone.",
+    blurb:
+      "MamaLine is a free pregnancy and baby-care line that needs no smartphone, no data and no app. A mother registers by dialling a USSD code, then gets antenatal and vaccine reminders, trusted answers and danger-sign help by SMS, in English, Pidgin, Hausa, Yoruba or Igbo. Every mother is linked to her community health extension worker, who is alerted the moment she reports a danger sign. Fixed safety rules read every message before the AI does, and the AI can only raise urgency, never lower it. MamaLine is a working prototype: clinical sign-off comes before any pilot with real mothers.",
+    features: [
+      "Registration by USSD on any phone",
+      "Antenatal and vaccine reminders by SMS",
+      "Answers and danger-sign help in five languages",
+      "Instant alert to her health worker on a danger sign",
+      "Safety rules run before the AI, which can only raise urgency",
+      "Nothing sent without consent; STOP deletes her details",
+    ],
+    audience:
+      "pregnant women and new mothers in Nigeria, and their community health workers",
+    status: "Prototype",
+  },
+  {
     slug: "paidly",
     name: "Paidly",
     url: "https://getpaidly.co",
@@ -115,27 +136,6 @@ export const products: Product[] = [
       "Live codes visible only to the resident who created them",
     ],
     audience: "gated estates across Nigeria",
-  },
-  {
-    slug: "mamaline",
-    name: "MamaLine",
-    url: "https://mamaline-web.vercel.app",
-    domain: "mamaline-web.vercel.app",
-    category: "Maternal health",
-    tagline: "Pregnancy and baby care on any phone.",
-    blurb:
-      "MamaLine is a free pregnancy and baby-care line that needs no smartphone, no data and no app. A mother registers by dialling a USSD code, then gets antenatal and vaccine reminders, trusted answers and danger-sign help by SMS, in English, Pidgin, Hausa, Yoruba or Igbo. Every mother is linked to her community health extension worker, who is alerted the moment she reports a danger sign. Fixed safety rules read every message before the AI does, and the AI can only raise urgency, never lower it. MamaLine is a working prototype: clinical sign-off comes before any pilot with real mothers.",
-    features: [
-      "Registration by USSD on any phone",
-      "Antenatal and vaccine reminders by SMS",
-      "Answers and danger-sign help in five languages",
-      "Instant alert to her health worker on a danger sign",
-      "Safety rules run before the AI, which can only raise urgency",
-      "Nothing sent without consent; STOP deletes her details",
-    ],
-    audience:
-      "pregnant women and new mothers in Nigeria, and their community health workers",
-    status: "Prototype",
   },
 ];
 

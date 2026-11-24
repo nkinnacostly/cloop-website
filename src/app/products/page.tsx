@@ -12,7 +12,7 @@ import { company, products } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Paidly, Get Any Number and MyEstateAccess — the products CLOOP UNIVERSE TECH LTD has built, launched and runs.",
+    "Paidly, Get Any Number, MyEstateAccess and MamaLine — the products CLOOP UNIVERSE TECH LTD has built and runs.",
 };
 
 export default function ProductsPage() {
@@ -83,6 +83,16 @@ export default function ProductsPage() {
                         {product.audience}
                       </dd>
                     </div>
+                    {product.status && (
+                      <div>
+                        <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-cream-100/40">
+                          Status
+                        </dt>
+                        <dd className="mt-1.5 text-sm text-cream-100/75">
+                          {product.status}
+                        </dd>
+                      </div>
+                    )}
                   </dl>
 
                   <div className="mt-8">

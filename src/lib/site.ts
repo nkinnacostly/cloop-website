@@ -35,11 +35,13 @@ export const nav = [
 ] as const;
 
 /**
- * Products CLOOP has shipped and runs itself.
+ * Products CLOOP has built and runs itself.
  *
- * All three entries were written from each product's own live site on
- * 2 September 2026. Taglines are the products' own. Re-check the counts
- * (services, countries) and the payment partners when they change.
+ * Paidly, Get Any Number and MyEstateAccess were written from each
+ * product's own live site on 2 September 2026; MamaLine from its
+ * repository README and website on 24 November 2026. Taglines are the
+ * products' own. Re-check the counts (services, countries), the payment
+ * partners and MamaLine's status when they change.
  */
 export type Product = {
   slug: string;
@@ -51,6 +53,8 @@ export type Product = {
   blurb: string;
   features: string[];
   audience: string;
+  /** Set only while a product is not yet live with real users. */
+  status?: string;
 };
 
 export const products: Product[] = [
@@ -111,6 +115,27 @@ export const products: Product[] = [
       "Live codes visible only to the resident who created them",
     ],
     audience: "gated estates across Nigeria",
+  },
+  {
+    slug: "mamaline",
+    name: "MamaLine",
+    url: "https://mamaline-web.vercel.app",
+    domain: "mamaline-web.vercel.app",
+    category: "Maternal health",
+    tagline: "Pregnancy and baby care on any phone.",
+    blurb:
+      "MamaLine is a free pregnancy and baby-care line that needs no smartphone, no data and no app. A mother registers by dialling a USSD code, then gets antenatal and vaccine reminders, trusted answers and danger-sign help by SMS, in English, Pidgin, Hausa, Yoruba or Igbo. Every mother is linked to her community health extension worker, who is alerted the moment she reports a danger sign. Fixed safety rules read every message before the AI does, and the AI can only raise urgency, never lower it. MamaLine is a working prototype: clinical sign-off comes before any pilot with real mothers.",
+    features: [
+      "Registration by USSD on any phone",
+      "Antenatal and vaccine reminders by SMS",
+      "Answers and danger-sign help in five languages",
+      "Instant alert to her health worker on a danger sign",
+      "Safety rules run before the AI, which can only raise urgency",
+      "Nothing sent without consent; STOP deletes her details",
+    ],
+    audience:
+      "pregnant women and new mothers in Nigeria, and their community health workers",
+    status: "Prototype",
   },
 ];
 

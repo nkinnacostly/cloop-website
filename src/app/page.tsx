@@ -20,7 +20,10 @@ import {
 } from "@/lib/site";
 
 const stats = [
-  { value: `${products.length}`, label: "Products shipped and running" },
+  {
+    value: `${products.filter((p) => !p.status).length}`,
+    label: "Products shipped and running",
+  },
   { value: `${services.length}`, label: "Service lines, one team" },
   { value: `RC ${company.rcNumber}`, label: "CAC registered company" },
 ];
@@ -139,8 +142,8 @@ export default function Home() {
               </h2>
               <p className="mt-5 max-w-xl text-pretty leading-relaxed text-cream-100/60">
                 The quickest way to judge a technology partner is to look at
-                what they have shipped for themselves. These are ours — live
-                products with real users, not case studies.
+                what they have shipped for themselves. These are ours — real
+                products, not case studies.
               </p>
             </Reveal>
             <Reveal delay={120}>
@@ -151,7 +154,7 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <ul className="mt-14 grid gap-5 lg:grid-cols-3">
+          <ul className="mt-14 grid gap-5 md:grid-cols-2">
             {products.map((product, i) => (
               <Reveal
                 as="li"
@@ -167,6 +170,12 @@ export default function Home() {
                 >
                   <span className="text-[0.7rem] uppercase tracking-[0.18em] text-ember-400/80">
                     {product.category}
+                    {product.status && (
+                      <span className="text-cream-100/45">
+                        {" "}
+                        · {product.status}
+                      </span>
+                    )}
                   </span>
                   <h3 className="mt-4 font-display text-[1.9rem] leading-tight tracking-tight text-cream-50">
                     {product.name}
@@ -312,7 +321,7 @@ export default function Home() {
             </h2>
             <p className="mt-5 max-w-md text-pretty leading-relaxed text-cream-100/60">
               We are new, and we are not going to pretend otherwise. What we
-              offer instead of a decade of logos is three products you can open
+              offer instead of a decade of logos is four products you can open
               in a browser right now, a registered company, and a named person
               answering the phone.
             </p>

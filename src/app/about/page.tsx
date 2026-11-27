@@ -80,8 +80,8 @@ export default function AboutPage() {
                   quietly rotting.
                 </p>
                 <p>
-                  We put that to the test on our own products. Paidly, Get Any
-                  Number and MyEstateAccess were designed, built, launched and
+                  We put that to the test on our own products. MyDomainsHub,
+                  Paidly, Get Any Number and MyEstateAccess were designed, built, launched and
                   are operated by this team — so the support load, the uptime
                   and the cost of every shortcut land on us. It is a useful
                   discipline, and it is why we are careful about what we

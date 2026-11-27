@@ -12,7 +12,7 @@ import { company, products } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "MamaLine, MyDomainsHub, Paidly, Get Any Number and MyEstateAccess — the products CLOOP UNIVERSE TECH LTD has built and runs.",
+    "MamaLine, MyDomainsHub, MyEstateAccess, Get Any Number and Paidly — the products CLOOP UNIVERSE TECH LTD has built and runs.",
 };
 
 export default function ProductsPage() {
@@ -35,8 +35,8 @@ export default function ProductsPage() {
               design, launch and operate our own products — which means we carry
               the support load, the uptime and the cost of every decision we
               make. It is the fastest way to stay honest about what software
-              really takes. Between them they serve businesses, freelancers,
-              developers and gated estates across Nigeria, Ghana, Kenya and
+              really takes. Between them they serve businesses, gated estates,
+              developers and freelancers across Nigeria, Ghana, Kenya and
               South Africa.
             </p>
           </Reveal>

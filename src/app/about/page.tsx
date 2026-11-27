@@ -81,11 +81,17 @@ export default function AboutPage() {
                 </p>
                 <p>
                   We put that to the test on our own products. MyDomainsHub,
-                  MyEstateAccess, Get Any Number and Paidly were designed, built, launched and
-                  are operated by this team — so the support load, the uptime
-                  and the cost of every shortcut land on us. It is a useful
-                  discipline, and it is why we are careful about what we
-                  recommend to clients.
+                  MyEstateAccess, Get Any Number and Paidly were designed,
+                  built, launched and are operated by this team — so the
+                  support load, the uptime and the cost of every shortcut land
+                  on us. It is a useful discipline, and it is why we are careful
+                  about what we recommend to clients.
+                </p>
+                <p>
+                  Next is MamaLine, a free pregnancy and baby-care line that
+                  works on any phone, by USSD and SMS. It is a working,
+                  open-source prototype, and it goes to its first pilot once
+                  clinicians have signed off every message it sends.
                 </p>
                 <p>
                   We are early in our story and we are candid about that. What

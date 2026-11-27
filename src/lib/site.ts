@@ -56,6 +56,8 @@ export type Product = {
   audience: string;
   /** Set only while a product is not yet live with real users. */
   status?: string;
+  /** A sister product shown and linked alongside this one. */
+  companion?: { name: string; url: string; domain: string };
 };
 
 export const products: Product[] = [
@@ -98,6 +100,11 @@ export const products: Product[] = [
       "AI assistant that answers from the help centre",
     ],
     audience: "Nigerian businesses buying a domain and sending email from it",
+    companion: {
+      name: "MyDomainsHub Mail",
+      url: "https://emails.mydomainshub.com",
+      domain: "emails.mydomainshub.com",
+    },
   },
   {
     slug: "myestateaccess",

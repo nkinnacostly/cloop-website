@@ -39,7 +39,8 @@ export const nav = [
  *
  * Paidly, Get Any Number and MyEstateAccess were written from each
  * product's own live site on 2 September 2026; MamaLine from its
- * repository README and website on 24 November 2026. Taglines are the
+ * repository README and website on 24 November 2026; MyDomainsHub from
+ * mydomainshub.com and emails.mydomainshub.com on 27 November 2026. Taglines are the
  * products' own. Re-check the counts (services, countries), the payment
  * partners and MamaLine's status when they change.
  */
@@ -78,6 +79,25 @@ export const products: Product[] = [
     audience:
       "pregnant women and new mothers in Nigeria, and their community health workers",
     status: "Prototype",
+  },
+  {
+    slug: "mydomainshub",
+    name: "MyDomainsHub",
+    url: "https://mydomainshub.com",
+    domain: "mydomainshub.com",
+    category: "Domains & business email",
+    tagline: "The domain you want, priced in naira.",
+    blurb:
+      "International registrars price in dollars and decline Nigerian cards; local resellers bury the renewal price. MyDomainsHub does neither. Search 697 extensions, from .com to .africa, and every result shows what the first year costs next to what it renews at. Pay by card, bank transfer or USSD, then pick your host and we fill in the nameservers. Its sister product, MyDomainsHub Mail (emails.mydomainshub.com), sends receipts, sign-in links and alerts from that same domain with one HTTP call or over SMTP, with each account's sending reputation kept apart from everyone else's.",
+    features: [
+      "697 extensions, renewal price shown upfront",
+      "Pay in naira by card, transfer or USSD",
+      "One-click nameservers for popular hosts",
+      "Contact privacy and transfer lock at no charge",
+      "Transactional email by API or SMTP, free plan included",
+      "AI assistant that answers from the help centre",
+    ],
+    audience: "Nigerian businesses buying a domain and sending email from it",
   },
   {
     slug: "paidly",
@@ -316,7 +336,7 @@ export const differentiators = [
   },
   {
     title: "We ship our own products",
-    body: "Paidly, Get Any Number and MyEstateAccess are ours — built, launched and run by this team. We carry the pager for our own software, which is a different discipline from billing for someone else's.",
+    body: "MyDomainsHub, Paidly, Get Any Number and MyEstateAccess are ours — built, launched and run by this team. We carry the pager for our own software, which is a different discipline from billing for someone else's.",
   },
   {
     title: "Registered and accountable",

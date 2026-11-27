@@ -84,6 +84,23 @@ export default function ProductsPage() {
                         {product.audience}
                       </dd>
                     </div>
+                    {product.companion && (
+                      <div>
+                        <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-cream-100/40">
+                          Includes
+                        </dt>
+                        <dd className="mt-1.5 text-sm text-cream-100/75">
+                          <a
+                            href={product.companion.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-cream-100/30 underline-offset-4 transition-colors hover:text-ember-400 hover:decoration-ember-400/60"
+                          >
+                            {product.companion.name}
+                          </a>
+                        </dd>
+                      </div>
+                    )}
                     {product.status && (
                       <div>
                         <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-cream-100/40">
@@ -96,7 +113,7 @@ export default function ProductsPage() {
                     )}
                   </dl>
 
-                  <div className="mt-8">
+                  <div className="mt-8 flex flex-wrap gap-3">
                     <ButtonLink
                       href={product.url}
                       variant="ghost"
@@ -106,6 +123,17 @@ export default function ProductsPage() {
                       Visit {product.domain}
                       <ExternalIcon />
                     </ButtonLink>
+                    {product.companion && (
+                      <ButtonLink
+                        href={product.companion.url}
+                        variant="ghost"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit {product.companion.domain}
+                        <ExternalIcon />
+                      </ButtonLink>
+                    )}
                   </div>
                 </div>
 

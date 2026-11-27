@@ -186,6 +186,11 @@ export default function Home() {
                   <p className="mt-4 text-sm leading-relaxed text-cream-100/50">
                     For {product.audience}.
                   </p>
+                  {product.companion && (
+                    <p className="mt-2 text-sm leading-relaxed text-cream-100/50">
+                      Includes {product.companion.name}.
+                    </p>
+                  )}
                   <span className="mt-auto flex items-center gap-1.5 pt-7 text-sm text-cream-100/45 transition-colors group-hover:text-ember-400">
                     {product.domain}
                     <ExternalIcon className="h-3.5 w-3.5" />
